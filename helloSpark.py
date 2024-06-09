@@ -20,9 +20,9 @@ if __name__ == '__main__':
 
     simple_df = load_data_file(spark,sys.argv[1])
 
-    partitoned_df = simple_df.repartition(2)
+    partitioned_df = simple_df.repartition(2)
 
-    count_df = count_by_country(partitoned_df)
+    count_df = count_by_country(partitioned_df)
 
     logger.info(count_df.collect())
 
